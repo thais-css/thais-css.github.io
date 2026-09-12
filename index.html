@@ -135,6 +135,21 @@
       font-size: 1.1rem;
     }
 
+    .case-link {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .case-link .case {
+      transition: transform 0.2s ease;
+    }
+
+    .case-link:hover .case,
+    .case-link:focus-visible .case {
+      transform: translateY(-4px);
+    }
+
     .case {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
@@ -291,10 +306,11 @@
           </p>
         </div>
 
-        <article class="case">
-          <div>
-            <span class="label">Python application</span>
-            <h3><a href="privacy-processing.html" style="color: inherit; text-decoration: none;">Privacy-first data processing tool →</a></h3>
+        <a class="case-link" href="privacy-processing.html" aria-label="Read the technical case study: Privacy-first data processing tool">
+          <article class="case">
+            <div>
+              <span class="label">Python application</span>
+              <h3>Privacy-first data processing tool</h3>
             <p>
               Built a local application to replace a fragmented manual workflow
               for sensitive data exports. The tool turns complex archives
@@ -332,7 +348,8 @@
               code, proprietary formats or personal data are shared.
             </p>
           </div>
-        </article>
+          </article>
+        </a>
       </div>
     </section>
 
