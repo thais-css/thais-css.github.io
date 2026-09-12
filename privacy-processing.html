@@ -26,6 +26,50 @@
     .prose { color:var(--muted); font-size:1.08rem; }
     .flow { margin-top:34px; padding:26px; background:var(--deep); color:#e7eee9; font-family:Arial, sans-serif; font-size:.94rem; line-height:1.7; }
     .flow span { color:#f2b19f; font-weight:700; }
+    .walkthrough-intro { max-width:690px; margin:0 0 22px; color:var(--muted); font-size:1.08rem; }
+    .walkthrough-note { max-width:760px; margin:0 0 30px; padding:14px 18px; border-left:3px solid var(--accent); background:#fbebe5; color:#724737; font-family:Arial, sans-serif; font-size:.9rem; line-height:1.55; }
+    .walkthrough { display:flex; gap:22px; overflow-x:auto; padding:4px 2px 22px; scroll-snap-type:x mandatory; scrollbar-color:var(--accent) var(--soft); }
+    .walkthrough::-webkit-scrollbar { height:10px; }
+    .walkthrough::-webkit-scrollbar-track { background:var(--soft); }
+    .walkthrough::-webkit-scrollbar-thumb { background:var(--accent); border-radius:999px; }
+    .screen { flex:0 0 min(790px, 92vw); margin:0; scroll-snap-align:start; }
+    .browser { overflow:hidden; border:1px solid #d6d4cd; border-radius:14px; background:#fbf8f1; box-shadow:0 14px 34px rgba(16,42,43,.1); font-family:Arial, sans-serif; }
+    .browser-bar { display:flex; align-items:center; gap:7px; height:38px; padding:0 14px; border-bottom:1px solid #e5e2da; background:#f0eee8; }
+    .browser-dot { width:9px; height:9px; border-radius:50%; background:#d7d4cd; }
+    .browser-title { margin-left:7px; color:#66635a; font-size:.72rem; }
+    .mock-page { min-height:455px; padding:26px; color:#201d14; }
+    .mock-card { width:min(100%, 540px); margin:0 auto; padding:25px; border:1px solid #e5e2da; border-radius:16px; background:#fff; box-shadow:0 4px 20px rgba(32,29,20,.05); }
+    .mock-card.wide { width:min(100%, 690px); }
+    .mock-heading { margin:0 0 7px; font-size:1.28rem; font-weight:700; text-align:center; }
+    .mock-subtitle { margin:0 0 20px; color:#66635a; font-size:.83rem; text-align:center; }
+    .mock-modes { display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; }
+    .mock-mode { min-height:128px; padding:16px; border:1px solid #e5e2da; border-radius:13px; background:#fff; }
+    .mock-mode-icon { font-size:1.3rem; }
+    .mock-mode h4 { margin:8px 0 6px; font-size:.9rem; }
+    .mock-mode p { margin:0; color:#66635a; font-size:.7rem; line-height:1.45; }
+    .mock-info { margin:0 0 16px; padding:13px; border:1px solid #e5e2da; border-radius:12px; background:#fff; color:#201d14; font-size:.75rem; line-height:1.55; }
+    .mock-info strong { display:block; margin-bottom:4px; font-size:.72rem; letter-spacing:.03em; text-transform:uppercase; }
+    .mock-upload { margin:0 0 12px; padding:22px 14px; border:2px dashed #e5e2da; border-radius:18px; background:#fff; text-align:center; }
+    .mock-upload-icon { font-size:2.1rem; }
+    .mock-upload strong { display:block; margin:7px 0 4px; font-size:.85rem; }
+    .mock-upload span { color:#66635a; font-size:.72rem; }
+    .mock-file { display:flex; justify-content:space-between; align-items:center; margin:0 0 12px; padding:10px 12px; border:1px solid #e5e2da; border-radius:9px; background:#fbf8f1; font-size:.75rem; font-weight:700; }
+    .mock-check { display:flex; gap:8px; align-items:center; margin:0 0 12px; padding:11px; border:1px solid #e5e2da; border-radius:10px; font-size:.73rem; }
+    .mock-check-box { width:15px; height:15px; border:1px solid #201d14; border-radius:3px; background:#fff; }
+    .mock-button { width:100%; padding:13px 16px; border:0; border-radius:11px; background:#201d14; color:#fbf8f1; font-size:.82rem; font-weight:700; text-align:center; }
+    .mock-progress { padding:44px 22px; text-align:center; }
+    .mock-progress-icon { font-size:2.5rem; }
+    .mock-progress h4 { margin:16px 0 7px; font-size:1.06rem; }
+    .mock-progress p { margin:0 0 20px; color:#66635a; font-size:.8rem; }
+    .progress-track { height:8px; overflow:hidden; border:1px solid #e5e2da; border-radius:999px; background:#fbf8f1; }
+    .progress-bar { width:62%; height:100%; border-radius:999px; background:#201d14; }
+    .mock-success { text-align:center; }
+    .success-mark { display:grid; width:54px; height:54px; margin:0 auto 14px; border-radius:50%; place-items:center; background:#dceedd; color:#2b7543; font-size:1.65rem; font-weight:700; }
+    .mock-password { margin:20px 0 13px; padding:14px; border-radius:10px; background:#f5f5f7; text-align:left; }
+    .mock-password span { display:block; margin-bottom:7px; color:#66635a; font-size:.68rem; font-weight:700; }
+    .mock-password code { display:block; padding:10px; border:1px solid #d1d1d6; border-radius:7px; background:#fff; color:#201d14; font-family:monospace; font-size:.82rem; text-align:center; }
+    figcaption { padding:15px 3px 0; color:var(--muted); font-family:Arial, sans-serif; font-size:.9rem; line-height:1.45; }
+    figcaption strong { color:var(--ink); }
     .cards { display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; }
     .card { min-height:176px; padding:24px; background:var(--soft); }
     .card h3 { margin:10px 0; font-size:1.3rem; font-weight:400; line-height:1.1; }
@@ -72,6 +116,82 @@
           <div class="flow">
             <span>Archive upload</span> → validation & extraction → normalized structure → selected processing path → structured PDF or raw-data package → <span>password-protected delivery</span> → temporary-file cleanup
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <span class="label">Interface walkthrough</span>
+        <h2>A guided flow in four screens</h2>
+        <p class="walkthrough-intro">The document-oriented path moves from choosing a delivery purpose to upload, processing and a password-protected package ready to download.</p>
+        <p class="walkthrough-note">These are faithful interface reconstructions based on the application’s implemented flow. All names, labels and files are fictitious; no production screens, company branding or personal data are shown.</p>
+
+        <div class="walkthrough" aria-label="Four fictional interface reconstructions that illustrate the application flow">
+          <figure class="screen">
+            <div class="browser">
+              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-title">Local delivery tool</span></div>
+              <div class="mock-page">
+                <div class="mock-card wide">
+                  <h3 class="mock-heading">Choose a delivery path</h3>
+                  <p class="mock-subtitle">Select the workflow that matches the request.</p>
+                  <div class="mock-modes">
+                    <article class="mock-mode"><div class="mock-mode-icon">📋</div><h4>Official request</h4><p>Structured document with selected fields.</p></article>
+                    <article class="mock-mode"><div class="mock-mode-icon">📄</div><h4>Personal data request</h4><p>Formatted document from an archive.</p></article>
+                    <article class="mock-mode"><div class="mock-mode-icon">🔐</div><h4>Raw-data delivery</h4><p>Protected package without document processing.</p></article>
+                    <article class="mock-mode"><div class="mock-mode-icon">🔗</div><h4>Combined delivery</h4><p>Several archive types in one package.</p></article>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption><strong>1 / Select the processing path.</strong> The application separates different delivery needs before files are handled.</figcaption>
+          </figure>
+
+          <figure class="screen">
+            <div class="browser">
+              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-title">Local delivery tool</span></div>
+              <div class="mock-page">
+                <div class="mock-card">
+                  <h3 class="mock-heading">📄 Personal data request</h3>
+                  <p class="mock-subtitle">Upload a data archive for a formatted document.</p>
+                  <div class="mock-info"><strong>This flow accepts</strong> • TAR.GZ archive<br>• Formatted document output<br>• Password-protected delivery</div>
+                  <div class="mock-upload"><div class="mock-upload-icon">📤</div><strong>Click to upload or drag and drop</strong><span>Accepts .tar.gz files</span></div>
+                  <div class="mock-file"><span>📄 sample-export.tar.gz</span><span>×</span></div>
+                  <div class="mock-check"><span class="mock-check-box"></span><span>Multiple records (batch processing)</span></div>
+                  <div class="mock-button">Process files</div>
+                </div>
+              </div>
+            </div>
+            <figcaption><strong>2 / Upload a supported archive.</strong> The operator can add one or more files, then starts a single guided process.</figcaption>
+          </figure>
+
+          <figure class="screen">
+            <div class="browser">
+              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-title">Local delivery tool</span></div>
+              <div class="mock-page">
+                <div class="mock-card">
+                  <div class="mock-progress"><div class="mock-progress-icon">⚙️</div><h4>Processing files…</h4><p>Extracting the archive and generating the document.</p><div class="progress-track"><div class="progress-bar"></div></div></div>
+                </div>
+              </div>
+            </div>
+            <figcaption><strong>3 / Process without manual transcription.</strong> The application extracts the archive and generates the standardized document.</figcaption>
+          </figure>
+
+          <figure class="screen">
+            <div class="browser">
+              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-title">Local delivery tool</span></div>
+              <div class="mock-page">
+                <div class="mock-card mock-success">
+                  <div class="success-mark">✓</div>
+                  <h3 class="mock-heading">Delivery package ready</h3>
+                  <p class="mock-subtitle">Your files have been password-protected.</p>
+                  <div class="mock-password"><span>🔐 Example password (fictitious)</span><code>Q7M-2N4-K8P</code></div>
+                  <div class="mock-button">⬇ Download protected ZIP</div>
+                </div>
+              </div>
+            </div>
+            <figcaption><strong>4 / Download and share securely.</strong> The final package and password are prepared together; temporary working files are cleared after delivery.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
