@@ -24,6 +24,19 @@
     .grid { display:grid; grid-template-columns:1fr 2fr; gap:52px; }
     h2 { font-size:clamp(2rem, 4vw, 3.2rem); font-weight:400; letter-spacing:-.04em; line-height:1.04; }
     .prose { color:var(--muted); font-size:1.08rem; }
+    .before-after-intro { max-width:690px; margin:0 0 28px; color:var(--muted); font-size:1.08rem; }
+    .before-after { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .journey { padding:26px; border:1px solid var(--line); }
+    .journey.before { background:#f3eee8; border-top:4px solid #967769; }
+    .journey.after { background:var(--soft); border-top:4px solid var(--accent); }
+    .journey-kicker { margin:0 0 10px; font-family:Arial, sans-serif; font-size:.75rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    .before .journey-kicker { color:#755b4d; }
+    .after .journey-kicker { color:var(--accent); }
+    .journey h3 { margin:0 0 19px; font-size:1.55rem; font-weight:400; letter-spacing:-.03em; line-height:1.05; }
+    .journey ol { display:grid; gap:10px; margin:0; padding:0; list-style:none; counter-reset:steps; }
+    .journey li { position:relative; min-height:50px; padding:13px 14px 13px 48px; background:rgba(255,255,255,.7); color:var(--muted); font-family:Arial, sans-serif; font-size:.87rem; line-height:1.35; counter-increment:steps; }
+    .journey li::before { position:absolute; top:13px; left:14px; color:var(--ink); content:counter(steps, decimal-leading-zero); font-weight:700; font-size:.73rem; letter-spacing:.06em; }
+    .journey strong { color:var(--ink); }
     .flow { margin-top:34px; padding:26px; background:var(--deep); color:#e7eee9; font-family:Arial, sans-serif; font-size:.94rem; line-height:1.7; }
     .flow span { color:#f2b19f; font-weight:700; }
     .walkthrough-intro { max-width:690px; margin:0 0 22px; color:var(--muted); font-size:1.08rem; }
@@ -79,7 +92,7 @@
     .outcome p { max-width:690px; color:#d4ddd7; font-size:1.14rem; }
     .note { border-left:3px solid var(--accent); padding:6px 0 6px 20px; color:var(--muted); font-family:Arial, sans-serif; font-size:.92rem; }
     footer { margin-top:60px; padding:40px 0; background:var(--ink); color:#f7f5f0; font-family:Arial, sans-serif; font-size:.9rem; }
-    @media (max-width:720px) { .grid, .cards { grid-template-columns:1fr; } .hero { padding:64px 0; } .section { padding:58px 0; } }
+    @media (max-width:720px) { .grid, .cards, .before-after { grid-template-columns:1fr; } .hero { padding:64px 0; } .section { padding:58px 0; } }
   </style>
 </head>
 <body>
@@ -103,6 +116,36 @@
         <div class="prose">
           <p>Preparing a data export previously meant navigating dozens of folders and JSON files, deciding what to copy into a spreadsheet, converting that file to PDF, then separately creating a password-protected package and communicating its password.</p>
           <p>The workflow was manual, inconsistent between operators and difficult to repeat reliably for batch requests.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <span class="label">Operational change</span>
+        <h2>From scattered handoffs to one guided flow</h2>
+        <p class="before-after-intro">The value was not simply creating a PDF. It was replacing a chain of operator decisions and disconnected tools with a repeatable delivery process.</p>
+        <div class="before-after">
+          <article class="journey before">
+            <p class="journey-kicker">Before</p>
+            <h3>Manual, fragmented work</h3>
+            <ol>
+              <li><strong>Open the archive</strong> and navigate its nested folders.</li>
+              <li><strong>Find relevant JSON files</strong> and decide what to copy.</li>
+              <li><strong>Build a spreadsheet</strong> with a format that could vary by operator.</li>
+              <li><strong>Convert it to PDF,</strong> create a protected ZIP and generate a password in separate steps.</li>
+            </ol>
+          </article>
+          <article class="journey after">
+            <p class="journey-kicker">After</p>
+            <h3>One repeatable workflow</h3>
+            <ol>
+              <li><strong>Upload a supported archive</strong> into a guided local interface.</li>
+              <li><strong>Select the relevant path</strong> for the delivery purpose.</li>
+              <li><strong>Generate a standardized document</strong> or preserve the required raw material.</li>
+              <li><strong>Download a password-protected package,</strong> with temporary work files cleared after delivery.</li>
+            </ol>
+          </article>
         </div>
       </div>
     </section>
