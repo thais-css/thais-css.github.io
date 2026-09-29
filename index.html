@@ -246,6 +246,30 @@
       color: var(--ink);
     }
 
+    .case-agent {
+      background: #f3eee8;
+      color: var(--ink);
+    }
+
+    .case-agent p,
+    .case-agent ul,
+    .case-agent .note {
+      color: var(--muted);
+    }
+
+    .case-agent .case-side {
+      border-left-color: #cfc6bb;
+    }
+
+    .case-agent .case-side h4 {
+      color: var(--ink);
+    }
+
+    .case-agent .tag {
+      border-color: #cfc6bb;
+      color: var(--ink);
+    }
+
     .about {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -416,6 +440,48 @@
               <p class="note">
                 A public product prototype that supports comparison; it does not
                 provide medical or nutritional advice.
+              </p>
+            </div>
+          </article>
+        </a>
+
+        <a class="case-link" href="wellbeing-agent.html" aria-label="Open project details: Wellbeing reporting agent">
+          <article class="case case-agent">
+            <div>
+              <span class="label">AI agent · Agentic workflow</span>
+              <h3>Wellbeing reporting agent</h3>
+              <p>
+                An AI agent that turns authorised wearable data into personalised
+                weekly reports on sleep, stress, heart rate and exercise.
+              </p>
+              <p>
+                It combines recurring data retrieval, aggregate history,
+                visual reporting and explicit rules for uncertainty, privacy and
+                non-clinical interpretation.
+              </p>
+
+              <div class="tags">
+                <span class="tag">AI agents</span>
+                <span class="tag">Scheduled workflows</span>
+                <span class="tag">Data visualisation</span>
+                <span class="tag">Privacy guardrails</span>
+                <span class="tag">Longitudinal data</span>
+              </div>
+            </div>
+
+            <div class="case-side">
+              <h4>What it does</h4>
+              <ul>
+                <li>Retrieves authorised aggregate wearable data</li>
+                <li>Checks coverage gaps and non-comparable periods</li>
+                <li>Updates daily and weekly history without duplication</li>
+                <li>Creates personalised visual reporting</li>
+                <li>Keeps clinical and privacy boundaries explicit</li>
+              </ul>
+
+              <p class="note">
+                The dashboard in the project overview uses fictional values and
+                contains no personal or health data.
               </p>
             </div>
           </article>
