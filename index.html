@@ -218,6 +218,34 @@
       font-size: 0.84rem;
     }
 
+    .case-link + .case-link {
+      margin-top: 20px;
+    }
+
+    .case-light {
+      background: var(--soft);
+      color: var(--ink);
+    }
+
+    .case-light p,
+    .case-light ul,
+    .case-light .note {
+      color: var(--muted);
+    }
+
+    .case-light .case-side {
+      border-left-color: var(--line);
+    }
+
+    .case-light .case-side h4 {
+      color: var(--ink);
+    }
+
+    .case-light .tag {
+      border-color: var(--line);
+      color: var(--ink);
+    }
+
     .about {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -348,6 +376,48 @@
               proprietary formats and personal data are not included.
             </p>
           </div>
+          </article>
+        </a>
+
+        <a class="case-link" href="nutricomp.html" aria-label="Open project details: NutriComp">
+          <article class="case case-light">
+            <div>
+              <span class="label">Product prototype · Mobile PWA</span>
+              <h3>NutriComp</h3>
+              <p>
+                A mobile-first tool that compares two grocery products against
+                nutritional priorities selected by the person using it.
+              </p>
+              <p>
+                It brings barcode scanning, public product data and
+                priority-weighted comparison into a short flow designed for use
+                in a supermarket.
+              </p>
+
+              <div class="tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">PWA</span>
+                <span class="tag">Barcode scanning</span>
+                <span class="tag">API integration</span>
+                <span class="tag">Decision logic</span>
+              </div>
+            </div>
+
+            <div class="case-side">
+              <h4>What it demonstrates</h4>
+              <ul>
+                <li>Up to three ranked nutritional priorities</li>
+                <li>Camera-based barcode scanning with a browser fallback</li>
+                <li>Normalization of public nutrition data for comparison</li>
+                <li>Category-by-category, explainable results</li>
+                <li>Installable mobile-first PWA experience</li>
+              </ul>
+
+              <p class="note">
+                A public product prototype that supports comparison; it does not
+                provide medical or nutritional advice.
+              </p>
+            </div>
           </article>
         </a>
       </div>
