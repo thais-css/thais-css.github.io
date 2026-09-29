@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NutriComp, a mobile-first product comparison PWA by Thaís Souza da Silva." />
+  <title>NutriComp — Thaís Souza da Silva</title>
+  <style>
+    :root { --ink:#102a2b; --deep:#0a2021; --paper:#f7f5f0; --soft:#e8eee9; --accent:#d66b4c; --muted:#5d6d6d; --line:#cbd5ce; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Georgia, "Times New Roman", serif; line-height:1.6; }
+    .wrap { width:min(1040px, calc(100% - 40px)); margin:0 auto; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:28px 0; font-family:Arial, sans-serif; font-size:.9rem; }
+    nav a { color:var(--ink); text-decoration:none; }
+    .brand { font-weight:700; letter-spacing:.04em; }
+    .back { color:var(--muted); }
+    .hero { padding:92px 0 76px; }
+    .eyebrow, .label { color:var(--accent); font-family:Arial, sans-serif; font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    h1, h2, h3, p { margin-top:0; }
+    h1 { max-width:900px; margin:16px 0 28px; font-size:clamp(3.1rem, 8vw, 6.4rem); font-weight:400; letter-spacing:-.06em; line-height:.96; }
+    h2 { font-size:clamp(2rem, 4vw, 3.2rem); font-weight:400; letter-spacing:-.04em; line-height:1.04; }
+    .lede { max-width:700px; color:var(--muted); font-size:clamp(1.15rem, 2.2vw, 1.5rem); }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:34px; font-family:Arial, sans-serif; }
+    .button { display:inline-block; padding:13px 17px; background:var(--ink); color:#f7f5f0; font-size:.9rem; font-weight:700; text-decoration:none; }
+    .button.secondary { border:1px solid var(--ink); background:transparent; color:var(--ink); }
+    .section { border-top:1px solid var(--line); padding:76px 0; }
+    .grid { display:grid; grid-template-columns:1fr 2fr; gap:52px; }
+    .prose { color:var(--muted); font-size:1.08rem; }
+    .flow { display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; margin-top:34px; background:var(--line); border:1px solid var(--line); }
+    .flow-step { min-height:180px; padding:24px; background:var(--soft); }
+    .flow-step strong { display:block; margin:8px 0; color:var(--ink); font-size:1.15rem; font-weight:400; }
+    .flow-step p { margin:0; color:var(--muted); font-family:Arial, sans-serif; font-size:.88rem; line-height:1.45; }
+    .cards { display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; }
+    .card { min-height:170px; padding:24px; background:var(--soft); }
+    .card h3 { margin:10px 0; font-size:1.3rem; font-weight:400; line-height:1.1; }
+    .card p { margin-bottom:0; color:var(--muted); font-size:.97rem; }
+    .model { padding:34px; background:var(--deep); color:#f7f5f0; }
+    .model h2 { margin-bottom:18px; }
+    .model p { max-width:740px; color:#d4ddd7; font-size:1.14rem; }
+    .model-list { display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; margin-top:30px; font-family:Arial, sans-serif; }
+    .model-list div { padding-top:14px; border-top:1px solid #3d5553; color:#d4ddd7; font-size:.9rem; }
+    .model-list strong { display:block; margin-bottom:7px; color:#f2b19f; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+    .note { border-left:3px solid var(--accent); padding:6px 0 6px 20px; color:var(--muted); font-family:Arial, sans-serif; font-size:.92rem; }
+    footer { margin-top:60px; padding:40px 0; background:var(--ink); color:#f7f5f0; font-family:Arial, sans-serif; font-size:.9rem; }
+    @media (max-width:720px) { .grid, .cards, .flow, .model-list { grid-template-columns:1fr; } .hero { padding:64px 0; } .section { padding:58px 0; } }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav>
+      <a class="brand" href="index.html">THAÍS SOUZA DA SILVA</a>
+      <a class="back" href="index.html#work">← All work</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <span class="eyebrow">Product prototype · Mobile PWA</span>
+      <h1>NutriComp</h1>
+      <p class="lede">A mobile-first tool that helps people compare two grocery products according to the nutritional priorities they choose.</p>
+      <div class="actions">
+        <a class="button" href="https://nutricomp.pages.dev" target="_blank" rel="noreferrer">Open the live prototype ↗</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap grid">
+        <h2>The product question</h2>
+        <div class="prose">
+          <p>Reading labels in a supermarket is slow, and “better” depends on what matters to the person in that moment. Protein, sugar, sodium, calories, fibre and fat do not carry the same weight for every choice.</p>
+          <p>NutriComp turns that decision into a short, mobile-friendly flow: choose priorities, scan two products and see how they compare against those priorities.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <span class="label">Product flow</span>
+        <h2>From shelf to comparison</h2>
+        <div class="flow">
+          <article class="flow-step"><span class="label">01</span><strong>Choose priorities</strong><p>Select up to three goals, in order. The comparison gives more weight to what the person ranked first.</p></article>
+          <article class="flow-step"><span class="label">02</span><strong>Scan two products</strong><p>Use the phone camera to read barcodes and retrieve available product data from Open Food Facts.</p></article>
+          <article class="flow-step"><span class="label">03</span><strong>Understand the trade-offs</strong><p>See category-by-category results and a transparent overall match based on the selected priorities.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap grid">
+        <h2>What I built</h2>
+        <div class="cards">
+          <article class="card"><span class="label">Mobile</span><h3>Installable PWA</h3><p>A mobile-first interface with a web app manifest and service worker that caches the application shell for repeat use.</p></article>
+          <article class="card"><span class="label">Scanning</span><h3>Camera with fallback</h3><p>BarcodeDetector is used when available, with ZXing as a fallback for browsers without native support.</p></article>
+          <article class="card"><span class="label">Data</span><h3>Public product API</h3><p>The app retrieves product information from Open Food Facts and handles missing names, images and nutrition fields.</p></article>
+          <article class="card"><span class="label">Logic</span><h3>Priority-weighted comparison</h3><p>Goals map to nutrition categories; the selected order determines the weight assigned to each comparison.</p></article>
+          <article class="card"><span class="label">Normalization</span><h3>Comparable values</h3><p>Nutrition values are compared per 100g or 100ml, with fallbacks for calorie and sodium representations.</p></article>
+          <article class="card"><span class="label">Feedback</span><h3>Explainable results</h3><p>Product cards show category winners and concise differences, rather than presenting only an unexplained score.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap model">
+      <h2>Preference, not prescription</h2>
+      <p>The product does not diagnose, prescribe diets or declare a universally “healthier” product. It makes the comparison explicit: the result is a match against the goals selected by the person.</p>
+      <div class="model-list">
+        <div><strong>Input</strong>Up to three ranked goals.</div>
+        <div><strong>Method</strong>Transparent category weights and per-100g values.</div>
+        <div><strong>Limit</strong>Results depend on the completeness of the public product data.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <p class="note">NutriComp is a personal product prototype. It uses public product information and is designed to support comparison, not to provide medical or nutritional advice.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">Thaís Souza da Silva · Operations, Automation & Practical AI</div></footer>
+</body>
+</html>
