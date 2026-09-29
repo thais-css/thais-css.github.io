@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A privacy-conscious wellbeing reporting agent by Thaís Souza da Silva." />
+  <title>Wellbeing reporting agent — Thaís Souza da Silva</title>
+  <style>
+    :root { --ink:#102a2b; --deep:#0a2021; --paper:#f7f5f0; --soft:#e8eee9; --accent:#d66b4c; --muted:#5d6d6d; --line:#cbd5ce; --blue:#527a94; --pink:#a26778; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Georgia, "Times New Roman", serif; line-height:1.6; }
+    .wrap { width:min(1040px, calc(100% - 40px)); margin:0 auto; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:28px 0; font-family:Arial, sans-serif; font-size:.9rem; }
+    nav a { color:var(--ink); text-decoration:none; }
+    .brand { font-weight:700; letter-spacing:.04em; }
+    .back { color:var(--muted); }
+    .hero { padding:92px 0 76px; }
+    .eyebrow, .label { color:var(--accent); font-family:Arial, sans-serif; font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    h1, h2, h3, p { margin-top:0; }
+    h1 { max-width:920px; margin:16px 0 28px; font-size:clamp(3.1rem, 8vw, 6.4rem); font-weight:400; letter-spacing:-.06em; line-height:.96; }
+    h2 { font-size:clamp(2rem, 4vw, 3.2rem); font-weight:400; letter-spacing:-.04em; line-height:1.04; }
+    .lede { max-width:730px; color:var(--muted); font-size:clamp(1.15rem, 2.2vw, 1.5rem); }
+    .section { border-top:1px solid var(--line); padding:76px 0; }
+    .grid { display:grid; grid-template-columns:1fr 2fr; gap:52px; }
+    .prose { color:var(--muted); font-size:1.08rem; }
+    .agent-flow { display:grid; grid-template-columns:repeat(5, 1fr); gap:1px; margin-top:34px; border:1px solid var(--line); background:var(--line); }
+    .agent-step { min-height:160px; padding:22px; background:var(--soft); }
+    .agent-step strong { display:block; margin:8px 0; color:var(--ink); font-size:1.08rem; font-weight:400; }
+    .agent-step p { margin:0; color:var(--muted); font-family:Arial, sans-serif; font-size:.82rem; line-height:1.45; }
+    .dashboard-wrap { margin-top:36px; }
+    .demo-label { display:inline-block; margin-bottom:12px; padding:6px 9px; background:#fbebe5; color:#724737; font-family:Arial,sans-serif; font-size:.73rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; }
+    .dashboard { overflow:hidden; border:1px solid #d6d4cd; background:#fbfaf6; box-shadow:0 16px 36px rgba(16,42,43,.1); font-family:Arial,sans-serif; }
+    .dash-top { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; padding:26px 28px; border-bottom:1px solid #e3e2dc; }
+    .dash-top h3 { margin:5px 0 4px; color:#222d2c; font-family:Georgia,"Times New Roman",serif; font-size:1.7rem; font-weight:400; }
+    .dash-top p { margin:0; color:#687573; font-size:.82rem; }
+    .coverage { flex:0 0 auto; padding:8px 10px; border:1px solid #b9d0bf; background:#edf5ee; color:#386746; font-size:.75rem; font-weight:700; }
+    .metric-row { display:grid; grid-template-columns:repeat(4, 1fr); gap:1px; background:#e3e2dc; border-bottom:1px solid #e3e2dc; }
+    .metric { padding:18px 20px; background:#fff; }
+    .metric span { display:block; color:#687573; font-size:.72rem; }
+    .metric strong { display:block; margin-top:6px; color:#222d2c; font-family:Georgia,"Times New Roman",serif; font-size:1.6rem; font-weight:400; }
+    .metric em { color:#687573; font-size:.7rem; font-style:normal; }
+    .chart-grid { display:grid; grid-template-columns:1.4fr 1fr; gap:1px; background:#e3e2dc; }
+    .chart-panel, .insight-panel { min-height:300px; padding:24px; background:#fff; }
+    .chart-title { display:flex; justify-content:space-between; gap:10px; margin-bottom:20px; color:#222d2c; font-size:.86rem; font-weight:700; }
+    .chart-title span:last-child { color:#687573; font-size:.73rem; font-weight:400; }
+    .chart { width:100%; height:190px; }
+    .chart text { fill:#7a8583; font-family:Arial,sans-serif; font-size:10px; }
+    .chart .gridline { stroke:#e6e5df; stroke-width:1; }
+    .chart .line-sleep { fill:none; stroke:var(--blue); stroke-width:3; }
+    .chart .line-stress { fill:none; stroke:var(--pink); stroke-width:3; }
+    .chart .dot-sleep { fill:var(--blue); }
+    .chart .dot-stress { fill:var(--pink); }
+    .legend { display:flex; gap:16px; margin-top:8px; color:#687573; font-size:.72rem; }
+    .legend i { display:inline-block; width:9px; height:9px; margin-right:5px; border-radius:50%; vertical-align:middle; }
+    .insight-panel h4 { margin:0 0 16px; color:#222d2c; font-family:Georgia,"Times New Roman",serif; font-size:1.35rem; font-weight:400; }
+    .insight { padding:12px 0; border-top:1px solid #e6e5df; color:#53615f; font-size:.82rem; line-height:1.5; }
+    .insight strong { display:block; margin-bottom:3px; color:#222d2c; font-size:.74rem; }
+    .dash-note { margin:0; padding:15px 28px; background:#f5f3ee; color:#687573; font-size:.72rem; line-height:1.5; }
+    .cards { display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; }
+    .card { min-height:170px; padding:24px; background:var(--soft); }
+    .card h3 { margin:10px 0; font-size:1.3rem; font-weight:400; line-height:1.1; }
+    .card p { margin-bottom:0; color:var(--muted); font-size:.97rem; }
+    .boundaries { padding:34px; background:var(--deep); color:#f7f5f0; }
+    .boundaries h2 { margin-bottom:18px; }
+    .boundaries p { max-width:740px; color:#d4ddd7; font-size:1.14rem; }
+    .boundary-list { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:30px; font-family:Arial,sans-serif; }
+    .boundary-list div { padding-top:14px; border-top:1px solid #3d5553; color:#d4ddd7; font-size:.9rem; }
+    .boundary-list strong { display:block; margin-bottom:7px; color:#f2b19f; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+    .note { border-left:3px solid var(--accent); padding:6px 0 6px 20px; color:var(--muted); font-family:Arial,sans-serif; font-size:.92rem; }
+    footer { margin-top:60px; padding:40px 0; background:var(--ink); color:#f7f5f0; font-family:Arial,sans-serif; font-size:.9rem; }
+    @media (max-width:720px) { .grid,.agent-flow,.metric-row,.chart-grid,.cards,.boundary-list { grid-template-columns:1fr; } .hero { padding:64px 0; } .section { padding:58px 0; } .dash-top { flex-direction:column; } .coverage { align-self:flex-start; } }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav>
+      <a class="brand" href="index.html">THAÍS SOUZA DA SILVA</a>
+      <a class="back" href="index.html#work">← All work</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <span class="eyebrow">AI agent · Privacy-conscious reporting</span>
+      <h1>Wellbeing reporting agent</h1>
+      <p class="lede">An AI agent that turns authorised wearable data into personalised weekly reports on sleep, stress, heart rate and exercise — while keeping uncertainty, coverage and privacy visible.</p>
+    </section>
+
+    <section class="section">
+      <div class="wrap grid">
+        <h2>From data points to a useful weekly reading</h2>
+        <div class="prose">
+          <p>Wearable data can be plentiful but difficult to use as a coherent record. A meaningful report needs more than a list of values: it has to account for missing data, distinguish observation from interpretation and avoid turning personal tracking into diagnosis.</p>
+          <p>This agentic workflow runs on a recurring schedule, retrieves authorised aggregate data, updates a local history and produces a focused report based on the measures the person wants to follow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <span class="label">Agent workflow</span>
+        <h2>A bounded recurring process</h2>
+        <div class="agent-flow">
+          <article class="agent-step"><span class="label">01</span><strong>Retrieve</strong><p>Read authorised, aggregate data from the wearable-data source.</p></article>
+          <article class="agent-step"><span class="label">02</span><strong>Check coverage</strong><p>Identify missing days, limited synchronisation and data-source gaps.</p></article>
+          <article class="agent-step"><span class="label">03</span><strong>Update history</strong><p>Keep daily and weekly summaries for only comparable periods.</p></article>
+          <article class="agent-step"><span class="label">04</span><strong>Interpret carefully</strong><p>Separate observed values from hypotheses and preserve uncertainty.</p></article>
+          <article class="agent-step"><span class="label">05</span><strong>Report</strong><p>Create a personalised visual report and concise, non-clinical reflections.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <span class="label">Illustrative output</span>
+        <h2>A weekly dashboard designed for reflection</h2>
+        <div class="dashboard-wrap">
+          <span class="demo-label">Fictional demonstration · no personal data</span>
+          <div class="dashboard" aria-label="Illustrative wellbeing report dashboard with fictional values">
+            <div class="dash-top">
+              <div><span class="label">Weekly report</span><h3>Seven-day wellbeing overview</h3><p>Illustrative reporting layout with fictional values.</p></div>
+              <span class="coverage">Coverage: 7 of 7 days</span>
+            </div>
+            <div class="metric-row">
+              <div class="metric"><span>Average sleep</span><strong>7h 48m</strong><em>illustrative</em></div>
+              <div class="metric"><span>Average stress</span><strong>38</strong><em>illustrative</em></div>
+              <div class="metric"><span>Resting heart rate</span><strong>68 bpm</strong><em>illustrative</em></div>
+              <div class="metric"><span>Exercise sessions</span><strong>3</strong><em>illustrative</em></div>
+            </div>
+            <div class="chart-grid">
+              <div class="chart-panel">
+                <div class="chart-title"><span>Daily signals</span><span>illustrative only</span></div>
+                <svg class="chart" viewBox="0 0 560 190" role="img" aria-label="Fictional weekly lines for sleep and stress">
+                  <line class="gridline" x1="38" y1="26" x2="542" y2="26"/><line class="gridline" x1="38" y1="73" x2="542" y2="73"/><line class="gridline" x1="38" y1="120" x2="542" y2="120"/><line class="gridline" x1="38" y1="155" x2="542" y2="155"/>
+                  <polyline class="line-sleep" points="50,98 130,72 210,86 290,52 370,67 450,76 530,44"/>
+                  <polyline class="line-stress" points="50,50 130,76 210,60 290,92 370,84 450,112 530,102"/>
+                  <circle class="dot-sleep" cx="50" cy="98" r="4"/><circle class="dot-sleep" cx="130" cy="72" r="4"/><circle class="dot-sleep" cx="210" cy="86" r="4"/><circle class="dot-sleep" cx="290" cy="52" r="4"/><circle class="dot-sleep" cx="370" cy="67" r="4"/><circle class="dot-sleep" cx="450" cy="76" r="4"/><circle class="dot-sleep" cx="530" cy="44" r="4"/>
+                  <circle class="dot-stress" cx="50" cy="50" r="4"/><circle class="dot-stress" cx="130" cy="76" r="4"/><circle class="dot-stress" cx="210" cy="60" r="4"/><circle class="dot-stress" cx="290" cy="92" r="4"/><circle class="dot-stress" cx="370" cy="84" r="4"/><circle class="dot-stress" cx="450" cy="112" r="4"/><circle class="dot-stress" cx="530" cy="102" r="4"/>
+                  <text x="45" y="178">Mon</text><text x="125" y="178">Tue</text><text x="205" y="178">Wed</text><text x="285" y="178">Thu</text><text x="365" y="178">Fri</text><text x="445" y="178">Sat</text><text x="525" y="178">Sun</text>
+                </svg>
+                <div class="legend"><span><i style="background:#527a94"></i>Sleep signal</span><span><i style="background:#a26778"></i>Stress signal</span></div>
+              </div>
+              <aside class="insight-panel">
+                <h4>Weekly notes</h4>
+                <div class="insight"><strong>Coverage check</strong>All expected days are present in this fictional example.</div>
+                <div class="insight"><strong>Pattern to review</strong>A visual report can surface a change without claiming its cause.</div>
+                <div class="insight"><strong>Exercise context</strong>Sessions are marked as context, not as proof of an effect on other measures.</div>
+              </aside>
+            </div>
+            <p class="dash-note">This dashboard is a faithful reconstruction of the agent’s reporting principles. Every number, chart and note above is fictional and does not represent a real person.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap grid">
+        <h2>What makes it agentic</h2>
+        <div class="cards">
+          <article class="card"><span class="label">Tool use</span><h3>Authorised retrieval</h3><p>The agent retrieves aggregate measures from a dedicated data source rather than relying on manually pasted values.</p></article>
+          <article class="card"><span class="label">State</span><h3>Longitudinal history</h3><p>Daily and weekly summaries let the system compare periods while making gaps and overlaps explicit.</p></article>
+          <article class="card"><span class="label">Judgment</span><h3>Rules before conclusions</h3><p>Coverage and comparability rules constrain what the agent can reasonably report as a pattern.</p></article>
+          <article class="card"><span class="label">Output</span><h3>Personalised reporting</h3><p>It combines a visual weekly view with concise reflections around the measures the person wants to follow.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap boundaries">
+      <h2>Privacy and safety boundaries</h2>
+      <p>The agent is intentionally designed to support personal reflection, not clinical decision-making. Its constraints are part of the product, not an afterthought.</p>
+      <div class="boundary-list">
+        <div><strong>Aggregate only</strong>No location, routes, minute-by-minute series or raw activity files are retained.</div>
+        <div><strong>No diagnosis</strong>Reports distinguish observation from interpretation and do not classify health values.</div>
+        <div><strong>Visible limits</strong>Missing data, source differences and non-comparable periods remain explicit in the output.</div>
+      </div>
+    </section>
+
+    <section class="section"><div class="wrap"><p class="note">This public overview deliberately contains no real health data, account information, device identifiers or production report screenshots.</p></div></section>
+  </main>
+
+  <footer><div class="wrap">Thaís Souza da Silva · Operations, Automation & Practical AI</div></footer>
+</body>
+</html>
