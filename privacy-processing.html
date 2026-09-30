@@ -105,17 +105,16 @@
 
   <main>
     <section class="hero wrap">
-      <span class="eyebrow">Technical case study · Python application</span>
+      <span class="eyebrow">Python application</span>
       <h1>Privacy-first data processing tool</h1>
-      <p class="lede">A local application that replaced a fragmented, manual workflow for complex data exports with a guided and consistent delivery process.</p>
+      <p class="lede">A local application that turns complex data archives into consistent, password-protected delivery packages.</p>
     </section>
 
     <section class="section">
       <div class="wrap grid">
         <h2>The problem</h2>
         <div class="prose">
-          <p>Preparing a data export previously meant navigating dozens of folders and JSON files, deciding what to copy into a spreadsheet, converting that file to PDF, then separately creating a password-protected package and communicating its password.</p>
-          <p>The workflow was manual, inconsistent between operators and difficult to repeat reliably for batch requests.</p>
+          <p>Preparing an export meant opening dozens of folders and JSON files, deciding what to copy into a spreadsheet, converting it to PDF, then creating a protected ZIP and password separately. The result depended too much on who was handling the request.</p>
         </div>
       </div>
     </section>
@@ -123,8 +122,8 @@
     <section class="section">
       <div class="wrap">
         <span class="label">Operational change</span>
-        <h2>From scattered handoffs to one guided flow</h2>
-        <p class="before-after-intro">The value was not simply creating a PDF. It was replacing a chain of operator decisions and disconnected tools with a repeatable delivery process.</p>
+        <h2>Before and after</h2>
+        <p class="before-after-intro">The tool brings the steps together and gives operators one clear path to follow.</p>
         <div class="before-after">
           <article class="journey before">
             <p class="journey-kicker">Before</p>
@@ -154,8 +153,8 @@
       <div class="wrap grid">
         <h2>What I built</h2>
         <div class="prose">
-          <p>I built a local Python application with a guided web interface. It accepts ZIP, TAR and TAR.GZ archives, normalizes their structures and applies the relevant processing path for the delivery purpose.</p>
-          <p>For document-oriented paths, it turns structured data into a consistent PDF. For other paths, it preserves the required raw material. The final output is a password-protected delivery package, followed by automated cleanup of temporary files.</p>
+          <p>I built a local Python application with a guided web interface. It accepts ZIP, TAR and TAR.GZ archives, normalises their structures and follows the appropriate processing path.</p>
+          <p>It can turn structured data into a standard PDF or keep the required raw files. In both cases, it prepares a password-protected package and clears temporary files afterwards.</p>
           <div class="flow">
             <span>Archive upload</span> → validation & extraction → normalized structure → selected processing path → structured PDF or raw-data package → <span>password-protected delivery</span> → temporary-file cleanup
           </div>
@@ -166,9 +165,9 @@
     <section class="section">
       <div class="wrap">
         <span class="label">Interface walkthrough</span>
-        <h2>A guided flow in four screens</h2>
-        <p class="walkthrough-intro">The document-oriented path moves from choosing a delivery purpose to upload, processing and a password-protected package ready to download.</p>
-        <p class="walkthrough-note">These are faithful interface reconstructions based on the application’s implemented flow. All names, labels and files are fictitious; no production screens, company branding or personal data are shown.</p>
+        <h2>Four steps, from request to download</h2>
+        <p class="walkthrough-intro">This example follows the document path: choose the request type, upload the archive, process it and download the package.</p>
+        <p class="walkthrough-note">These screens are reconstructions of the implemented flow. The labels and files are fictional; no production screens or personal data are shown.</p>
 
         <div class="walkthrough" aria-label="Four fictional interface reconstructions that illustrate the application flow">
           <figure class="screen">
@@ -187,7 +186,7 @@
                 </div>
               </div>
             </div>
-            <figcaption><strong>1 / Select the processing path.</strong> The application separates different delivery needs before files are handled.</figcaption>
+            <figcaption><strong>1 / Choose the request type.</strong> The application sets the delivery path before handling files.</figcaption>
           </figure>
 
           <figure class="screen">
@@ -205,7 +204,7 @@
                 </div>
               </div>
             </div>
-            <figcaption><strong>2 / Upload a supported archive.</strong> The operator can add one or more files, then starts a single guided process.</figcaption>
+            <figcaption><strong>2 / Upload the archive.</strong> The operator adds the file and starts the process.</figcaption>
           </figure>
 
           <figure class="screen">
@@ -217,7 +216,7 @@
                 </div>
               </div>
             </div>
-            <figcaption><strong>3 / Process without manual transcription.</strong> The application extracts the archive and generates the standardized document.</figcaption>
+            <figcaption><strong>3 / Process the files.</strong> The application extracts the archive and generates the document.</figcaption>
           </figure>
 
           <figure class="screen">
@@ -233,7 +232,7 @@
                 </div>
               </div>
             </div>
-            <figcaption><strong>4 / Download and share securely.</strong> The final package and password are prepared together; temporary working files are cleared after delivery.</figcaption>
+            <figcaption><strong>4 / Download the package.</strong> The password is prepared with the files, then temporary working files are cleared.</figcaption>
           </figure>
         </div>
       </div>
@@ -254,13 +253,13 @@
     </section>
 
     <section class="wrap outcome">
-      <h2>The operational change</h2>
-      <p>The tool replaced an unstandardized sequence of manual handoffs with a single, repeatable workflow. It reduces the need to explore raw JSON files, transcribe information into individual spreadsheets and perform document, packaging and password steps separately.</p>
+      <h2>The result</h2>
+      <p>The process no longer depends on manually exploring JSON files, building individual spreadsheets and switching between tools to prepare a delivery.</p>
     </section>
 
     <section class="section">
       <div class="wrap">
-        <p class="note">To protect sensitive information, this page uses fictional labels and reconstructed interface screens. It does not include personal data, production materials or internal source code. “Password-protected delivery package” is used deliberately; no specific encryption standard is claimed here.</p>
+        <p class="note">The application’s internal code and proprietary formats are not included here.</p>
       </div>
     </section>
   </main>
