@@ -58,7 +58,7 @@
     <section class="hero wrap">
       <span class="eyebrow">Product prototype · Mobile PWA</span>
       <h1>NutriComp</h1>
-      <p class="lede">A mobile-first tool that helps people compare two grocery products according to the nutritional priorities they choose.</p>
+      <p class="lede">A small mobile app for comparing two grocery products using the priorities you set.</p>
       <div class="actions">
         <a class="button" href="https://nutricomp.pages.dev" target="_blank" rel="noreferrer">Open the live prototype ↗</a>
       </div>
@@ -68,8 +68,8 @@
       <div class="wrap grid">
         <h2>The product question</h2>
         <div class="prose">
-          <p>Reading labels in a supermarket is slow, and “better” depends on what matters to the person in that moment. Protein, sugar, sodium, calories, fibre and fat do not carry the same weight for every choice.</p>
-          <p>NutriComp turns that decision into a short, mobile-friendly flow: choose priorities, scan two products and see how they compare against those priorities.</p>
+          <p>Reading labels in a supermarket takes time, and there is no single “better” product. Protein, sugar, sodium, calories, fibre and fat matter differently depending on the person and the moment.</p>
+          <p>NutriComp keeps the choice simple: pick your priorities, scan two products and compare them.</p>
         </div>
       </div>
     </section>
@@ -77,11 +77,11 @@
     <section class="section">
       <div class="wrap">
         <span class="label">Product flow</span>
-        <h2>From shelf to comparison</h2>
+        <h2>How it works</h2>
         <div class="flow">
-          <article class="flow-step"><span class="label">01</span><strong>Choose priorities</strong><p>Select up to three goals, in order. The comparison gives more weight to what the person ranked first.</p></article>
-          <article class="flow-step"><span class="label">02</span><strong>Scan two products</strong><p>Use the phone camera to read barcodes and retrieve available product data from Open Food Facts.</p></article>
-          <article class="flow-step"><span class="label">03</span><strong>Understand the trade-offs</strong><p>See category-by-category results and a transparent overall match based on the selected priorities.</p></article>
+          <article class="flow-step"><span class="label">01</span><strong>Choose priorities</strong><p>Select up to three goals. The first one matters most in the comparison.</p></article>
+          <article class="flow-step"><span class="label">02</span><strong>Scan two products</strong><p>Use the camera to read their barcodes and retrieve available product data from Open Food Facts.</p></article>
+          <article class="flow-step"><span class="label">03</span><strong>Compare them</strong><p>See which product matches each priority and why.</p></article>
         </div>
       </div>
     </section>
@@ -90,19 +90,19 @@
       <div class="wrap grid">
         <h2>What I built</h2>
         <div class="cards">
-          <article class="card"><span class="label">Mobile</span><h3>Installable PWA</h3><p>A mobile-first interface with a web app manifest and service worker that caches the application shell for repeat use.</p></article>
-          <article class="card"><span class="label">Scanning</span><h3>Camera with fallback</h3><p>BarcodeDetector is used when available, with ZXing as a fallback for browsers without native support.</p></article>
-          <article class="card"><span class="label">Data</span><h3>Public product API</h3><p>The app retrieves product information from Open Food Facts and handles missing names, images and nutrition fields.</p></article>
-          <article class="card"><span class="label">Logic</span><h3>Priority-weighted comparison</h3><p>Goals map to nutrition categories; the selected order determines the weight assigned to each comparison.</p></article>
-          <article class="card"><span class="label">Normalization</span><h3>Comparable values</h3><p>Nutrition values are compared per 100g or 100ml, with fallbacks for calorie and sodium representations.</p></article>
-          <article class="card"><span class="label">Feedback</span><h3>Explainable results</h3><p>Product cards show category winners and concise differences, rather than presenting only an unexplained score.</p></article>
+          <article class="card"><span class="label">Mobile</span><h3>Installable PWA</h3><p>A mobile-first app with a manifest and service worker, so it can be installed and reused.</p></article>
+          <article class="card"><span class="label">Scanning</span><h3>Camera with fallback</h3><p>It uses BarcodeDetector when the browser supports it, and ZXing when it does not.</p></article>
+          <article class="card"><span class="label">Data</span><h3>Public product API</h3><p>It gets product information from Open Food Facts and handles missing names, images and nutrition fields.</p></article>
+          <article class="card"><span class="label">Logic</span><h3>Priority-weighted comparison</h3><p>The order of the selected goals determines how much each category counts.</p></article>
+          <article class="card"><span class="label">Normalization</span><h3>Comparable values</h3><p>Nutrition values are compared per 100g or 100ml, including fallbacks for calories and sodium.</p></article>
+          <article class="card"><span class="label">Feedback</span><h3>Clear results</h3><p>Product cards show category winners and the differences behind the result.</p></article>
         </div>
       </div>
     </section>
 
     <section class="wrap model">
-      <h2>Preference, not prescription</h2>
-      <p>The product does not diagnose, prescribe diets or declare a universally “healthier” product. It makes the comparison explicit: the result is a match against the goals selected by the person.</p>
+      <h2>What the result means</h2>
+      <p>The result shows which of the two products is a closer match for the priorities selected. It does not give dietary or medical advice.</p>
       <div class="model-list">
         <div><strong>Input</strong>Up to three ranked goals.</div>
         <div><strong>Method</strong>Transparent category weights and per-100g values.</div>
@@ -110,11 +110,6 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="wrap">
-        <p class="note">NutriComp is a personal product prototype. It uses public product information and is designed to support comparison, not to provide medical or nutritional advice.</p>
-      </div>
-    </section>
   </main>
 
   <footer><div class="wrap">Thaís Souza da Silva · Operations, Automation & Practical AI</div></footer>
