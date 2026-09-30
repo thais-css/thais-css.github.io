@@ -82,17 +82,17 @@
 
   <main>
     <section class="hero wrap">
-      <span class="eyebrow">AI agent · Privacy-conscious reporting</span>
+      <span class="eyebrow">AI agent · Weekly reporting</span>
       <h1>Wellbeing reporting agent</h1>
-      <p class="lede">An AI agent that turns authorised wearable data into personalised weekly reports on sleep, stress, heart rate and exercise — while keeping uncertainty, coverage and privacy visible.</p>
+      <p class="lede">An AI agent that turns authorised wearable data into a weekly report on sleep, stress, heart rate and exercise.</p>
     </section>
 
     <section class="section">
       <div class="wrap grid">
-        <h2>From data points to a useful weekly reading</h2>
+        <h2>What it does</h2>
         <div class="prose">
-          <p>Wearable data can be plentiful but difficult to use as a coherent record. A meaningful report needs more than a list of values: it has to account for missing data, distinguish observation from interpretation and avoid turning personal tracking into diagnosis.</p>
-          <p>This agentic workflow runs on a recurring schedule, retrieves authorised aggregate data, updates a local history and produces a focused report based on the measures the person wants to follow.</p>
+          <p>Wearable data can be useful, but a list of numbers is not much help on its own. This agent checks whether the week is complete, keeps a history and writes a short report around the measures someone wants to follow.</p>
+          <p>It works on a recurring schedule and uses authorised aggregate data only.</p>
         </div>
       </div>
     </section>
@@ -100,37 +100,37 @@
     <section class="section">
       <div class="wrap">
         <span class="label">Agent workflow</span>
-        <h2>A bounded recurring process</h2>
+        <h2>The weekly workflow</h2>
         <div class="agent-flow">
-          <article class="agent-step"><span class="label">01</span><strong>Retrieve</strong><p>Read authorised, aggregate data from the wearable-data source.</p></article>
-          <article class="agent-step"><span class="label">02</span><strong>Check coverage</strong><p>Identify missing days, limited synchronisation and data-source gaps.</p></article>
-          <article class="agent-step"><span class="label">03</span><strong>Update history</strong><p>Keep daily and weekly summaries for only comparable periods.</p></article>
-          <article class="agent-step"><span class="label">04</span><strong>Interpret carefully</strong><p>Separate observed values from hypotheses and preserve uncertainty.</p></article>
-          <article class="agent-step"><span class="label">05</span><strong>Report</strong><p>Create a personalised visual report and concise, non-clinical reflections.</p></article>
+          <article class="agent-step"><span class="label">01</span><strong>Retrieve</strong><p>Read authorised aggregate data from the wearable source.</p></article>
+          <article class="agent-step"><span class="label">02</span><strong>Check coverage</strong><p>Flag missing days and gaps in the source.</p></article>
+          <article class="agent-step"><span class="label">03</span><strong>Update history</strong><p>Keep daily and weekly summaries for comparable periods.</p></article>
+          <article class="agent-step"><span class="label">04</span><strong>Read carefully</strong><p>Keep observations separate from possible explanations.</p></article>
+          <article class="agent-step"><span class="label">05</span><strong>Report</strong><p>Create a visual weekly report with concise notes.</p></article>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="wrap">
-        <span class="label">Illustrative output</span>
-        <h2>A weekly dashboard designed for reflection</h2>
+        <span class="label">Example output</span>
+        <h2>A sample weekly report</h2>
         <div class="dashboard-wrap">
-          <span class="demo-label">Fictional demonstration · no personal data</span>
+          <span class="demo-label">Fictional dashboard · no personal data</span>
           <div class="dashboard" aria-label="Illustrative wellbeing report dashboard with fictional values">
             <div class="dash-top">
-              <div><span class="label">Weekly report</span><h3>Seven-day wellbeing overview</h3><p>Illustrative reporting layout with fictional values.</p></div>
+              <div><span class="label">Weekly report</span><h3>Seven-day wellbeing overview</h3><p>Sample layout with fictional values.</p></div>
               <span class="coverage">Coverage: 7 of 7 days</span>
             </div>
             <div class="metric-row">
-              <div class="metric"><span>Average sleep</span><strong>7h 48m</strong><em>illustrative</em></div>
+              <div class="metric"><span>Average sleep</span><strong>7h 48m</strong><em>sample value</em></div>
               <div class="metric"><span>Average stress</span><strong>38</strong><em>illustrative</em></div>
               <div class="metric"><span>Resting heart rate</span><strong>68 bpm</strong><em>illustrative</em></div>
               <div class="metric"><span>Exercise sessions</span><strong>3</strong><em>illustrative</em></div>
             </div>
             <div class="chart-grid">
               <div class="chart-panel">
-                <div class="chart-title"><span>Daily signals</span><span>illustrative only</span></div>
+                <div class="chart-title"><span>Daily signals</span><span>sample data</span></div>
                 <svg class="chart" viewBox="0 0 560 190" role="img" aria-label="Fictional weekly lines for sleep and stress">
                   <line class="gridline" x1="38" y1="26" x2="542" y2="26"/><line class="gridline" x1="38" y1="73" x2="542" y2="73"/><line class="gridline" x1="38" y1="120" x2="542" y2="120"/><line class="gridline" x1="38" y1="155" x2="542" y2="155"/>
                   <polyline class="line-sleep" points="50,98 130,72 210,86 290,52 370,67 450,76 530,44"/>
@@ -143,12 +143,12 @@
               </div>
               <aside class="insight-panel">
                 <h4>Weekly notes</h4>
-                <div class="insight"><strong>Coverage check</strong>All expected days are present in this fictional example.</div>
-                <div class="insight"><strong>Pattern to review</strong>A visual report can surface a change without claiming its cause.</div>
-                <div class="insight"><strong>Exercise context</strong>Sessions are marked as context, not as proof of an effect on other measures.</div>
+                <div class="insight"><strong>Coverage check</strong>All expected days are present in this example.</div>
+                <div class="insight"><strong>Pattern to review</strong>The report can flag a change without claiming its cause.</div>
+                <div class="insight"><strong>Exercise context</strong>Sessions add context; they do not prove an effect on other measures.</div>
               </aside>
             </div>
-            <p class="dash-note">This dashboard is a faithful reconstruction of the agent’s reporting principles. Every number, chart and note above is fictional and does not represent a real person.</p>
+            <p class="dash-note">The layout follows the reporting approach used by the agent. The values above are fictional.</p>
           </div>
         </div>
       </div>
@@ -156,27 +156,26 @@
 
     <section class="section">
       <div class="wrap grid">
-        <h2>What makes it agentic</h2>
+        <h2>Why it is an AI agent</h2>
         <div class="cards">
-          <article class="card"><span class="label">Tool use</span><h3>Authorised retrieval</h3><p>The agent retrieves aggregate measures from a dedicated data source rather than relying on manually pasted values.</p></article>
-          <article class="card"><span class="label">State</span><h3>Longitudinal history</h3><p>Daily and weekly summaries let the system compare periods while making gaps and overlaps explicit.</p></article>
-          <article class="card"><span class="label">Judgment</span><h3>Rules before conclusions</h3><p>Coverage and comparability rules constrain what the agent can reasonably report as a pattern.</p></article>
-          <article class="card"><span class="label">Output</span><h3>Personalised reporting</h3><p>It combines a visual weekly view with concise reflections around the measures the person wants to follow.</p></article>
+          <article class="card"><span class="label">Tool use</span><h3>Data retrieval</h3><p>It gets aggregate measures from a dedicated source instead of relying on manually pasted values.</p></article>
+          <article class="card"><span class="label">State</span><h3>History</h3><p>Daily and weekly summaries make it possible to compare periods and spot gaps.</p></article>
+          <article class="card"><span class="label">Rules</span><h3>Checks before conclusions</h3><p>Coverage and comparability rules limit what the report can call a pattern.</p></article>
+          <article class="card"><span class="label">Output</span><h3>Weekly reporting</h3><p>It combines a visual view with notes on the measures the person chose to follow.</p></article>
         </div>
       </div>
     </section>
 
     <section class="wrap boundaries">
-      <h2>Privacy and safety boundaries</h2>
-      <p>The agent is intentionally designed to support personal reflection, not clinical decision-making. Its constraints are part of the product, not an afterthought.</p>
+      <h2>What it does not do</h2>
+      <p>The agent is for personal reflection. It does not make clinical decisions or diagnose health conditions.</p>
       <div class="boundary-list">
-        <div><strong>Aggregate only</strong>No location, routes, minute-by-minute series or raw activity files are retained.</div>
-        <div><strong>No diagnosis</strong>Reports distinguish observation from interpretation and do not classify health values.</div>
-        <div><strong>Visible limits</strong>Missing data, source differences and non-comparable periods remain explicit in the output.</div>
+        <div><strong>Aggregate data</strong>It does not retain location, routes, raw activity files or minute-by-minute series.</div>
+        <div><strong>No diagnosis</strong>Reports do not classify health values.</div>
+        <div><strong>Clear limits</strong>Missing data, source differences and non-comparable periods are shown in the report.</div>
       </div>
     </section>
 
-    <section class="section"><div class="wrap"><p class="note">This public overview deliberately contains no real health data, account information, device identifiers or production report screenshots.</p></div></section>
   </main>
 
   <footer><div class="wrap">Thaís Souza da Silva · Operations, Automation & Practical AI</div></footer>
